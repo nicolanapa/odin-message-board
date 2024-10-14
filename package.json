@@ -1,0 +1,28 @@
+{
+    "name": "simple-nodejs-website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "git": "git subtree push --prefix dist origin gh-pages",
+        "startWatch": "node --watch ./app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@eslint/eslintrc": "^3.1.0",
+        "@eslint/js": "^9.12.0",
+        "@types/node": "^22.7.5",
+        "eslint": "^8.57.1",
+        "eslint-config-prettier": "^9.1.0",
+        "globals": "^15.11.0",
+        "prettier": "3.2.5"
+    },
+    "dependencies": {
+        "ejs": "^3.1.10",
+        "express": "^5.0.1"
+    }
+}
