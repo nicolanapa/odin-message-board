@@ -8,4 +8,8 @@ app.get("/", (req, res) => {
     res.send("test");
 });
 
+app.get("/new", (req, res) => {
+    res.send("test2");
+});
+
 app.listen(PORT);
