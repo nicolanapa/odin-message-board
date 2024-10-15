@@ -7,7 +7,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "git": "git subtree push --prefix dist origin gh-pages",
-        "startWatch": "node --watch ./app.js"
+        "startWatch": "node --watch --env-file=.env ./src/app.js"
     },
     "keywords": [],
     "author": "",
