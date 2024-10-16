@@ -25,7 +25,9 @@ app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-    res.send("test");
+    res.set({ "Content-Type": "text/html" });
+    res.status(200);
+    res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
 app.get("/new", (req, res) => {
