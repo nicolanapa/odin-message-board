@@ -1,7 +1,13 @@
 import express from "express";
 import process from "process";
+import url from "url";
+import path from "path";
 
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT;
+const app = express();
+
 const messages = [
     {
         text: "Hi there!",
@@ -14,7 +20,9 @@ const messages = [
         added: new Date(),
     },
 ];
-const app = express();
+
+app.set("views", path.join(__dirname, "src/views"));
+app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
     res.send("test");
