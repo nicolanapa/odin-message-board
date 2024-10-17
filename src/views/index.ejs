@@ -4,15 +4,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title><%= title %></title>
+
+        <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
         <main>
             <div>
                 <%for (let i = 0; i < messages.length; i++) {%>
-                    <div>
-                        <div><%= messages[i].added %></div>
-                        <h2><%= messages[i].user %></h2>
-                        <p><%= messages[i].text %></p>
+                    <div class="message-board">
+                        <h4 class="date-added"><%= messages[i].added %></h4>
+                        <h2 class="user"><%= messages[i].user %></h2>
+                        <p class="message-text"><%= messages[i].text %></p>
                     </div>
                 <%}%>
             </div>
