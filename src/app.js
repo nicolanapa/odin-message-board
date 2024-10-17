@@ -31,7 +31,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/new", (req, res) => {
-    res.send("test2");
+    res.set({ "Content-Type": "text/html" });
+    res.status(200);
+    res.render("form");
 });
 
 app.listen(PORT);
