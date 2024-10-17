@@ -70,6 +70,8 @@ app.post("/new", (req, res) => {
         "/" +
         actualDate.getUTCFullYear();
 
+    // Check content
+
     messages.push({ text: req.body.messageContent, user: req.body.userName, added: now });
 
     res.redirect("/");
