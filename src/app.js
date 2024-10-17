@@ -23,6 +23,7 @@ const messages = [
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
     res.set({ "Content-Type": "text/html" });
@@ -34,6 +35,14 @@ app.get("/new", (req, res) => {
     res.set({ "Content-Type": "text/html" });
     res.status(200);
     res.render("form");
+});
+
+app.post("/new", (req, res) => {
+    console.log(req.body);
+
+    messages.push({ text: req.body.messageContent, user: req.body.userName, added: new Date() });
+
+    res.redirect("/");
 });
 
 app.listen(PORT);
