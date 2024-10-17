@@ -8,16 +8,31 @@ const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT;
 const app = express();
 
+let actualDate = new Date();
+
+let now =
+    actualDate.getUTCHours() +
+    ":" +
+    actualDate.getUTCMinutes() +
+    ":" +
+    (actualDate.getUTCSeconds() < 10 ? "0" + actualDate.getUTCSeconds() : actualDate.getUTCSeconds()) +
+    ", " +
+    actualDate.getUTCDate() +
+    "/" +
+    (actualDate.getUTCMonth() + 1) +
+    "/" +
+    actualDate.getUTCFullYear();
+
 const messages = [
     {
         text: "Hi there!",
         user: "Amando",
-        added: new Date(),
+        added: now,
     },
     {
         text: "Hello World!",
         user: "Charles",
-        added: new Date(),
+        added: now,
     },
 ];
 
@@ -40,9 +55,29 @@ app.get("/new", (req, res) => {
 app.post("/new", (req, res) => {
     console.log(req.body);
 
-    messages.push({ text: req.body.messageContent, user: req.body.userName, added: new Date() });
+    actualDate = new Date();
+
+    now =
+        actualDate.getUTCHours() +
+        ":" +
+        actualDate.getUTCMinutes() +
+        ":" +
+        (actualDate.getUTCSeconds() < 10 ? "0" + actualDate.getUTCSeconds() : actualDate.getUTCSeconds()) +
+        ", " +
+        actualDate.getUTCDate() +
+        "/" +
+        (actualDate.getUTCMonth() + 1) +
+        "/" +
+        actualDate.getUTCFullYear();
+
+    messages.push({ text: req.body.messageContent, user: req.body.userName, added: now });
 
     res.redirect("/");
+});
+
+app.get("/styles/:file", (req, res) => {
+    console.log(req.path);
+    res.sendFile(__dirname + req.path);
 });
 
 app.listen(PORT);
