@@ -7,17 +7,23 @@
     font-family: "Afacad Flux", system-ui;
 }
 
+h1 {
+    font-size: x-large;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
 .message-board {
     padding: 30px 20px;
     margin: 30px 10px;
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(255, 255, 241);
     border-radius: 15px;
 }
 
 .message {
     padding: 15px 10px;
     margin: 5px;
-    background-color: rgb(249, 240, 227);
+    background-color: rgb(249, 227, 227);
     border-radius: 10px;
 }
 
