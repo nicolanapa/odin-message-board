@@ -9,9 +9,9 @@
     </head>
     <body>
         <main>
-            <div>
+            <div class="message-board">
                 <%for (let i = 0; i < messages.length; i++) {%>
-                    <div class="message-board">
+                    <div class="message">
                         <h4 class="date-added"><%= messages[i].added %></h4>
                         <h2 class="user"><%= messages[i].user %></h2>
                         <p class="message-text"><%= messages[i].text %></p>
