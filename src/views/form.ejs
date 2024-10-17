@@ -1,9 +1,13 @@
-<form method="POST" action="/new">
-    <label for="user-name">User: </label>
-    <input type="text" name="userName" id="user-name" />
+<form method="POST" action="/new" class="form">
+    <div class="input-container">
+        <label for="user-name">User: </label>
+        <input type="text" name="userName" id="user-name" />
+    </div>
 
-    <label for="message-content">Message to be sent: </label>
-    <input type="text" name="messageContent" id="message-content" />
+    <div class="input-container">
+        <label for="message-content">Message to be sent: </label>
+        <input type="text" name="messageContent" id="message-content" />
+    </div>
 
-    <button>Send Message!</button>
+    <button class="send-message">Send Message!</button>
 </form>
