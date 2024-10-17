@@ -14,11 +14,8 @@ h1 {
 }
 
 .message-board {
-    padding: 30px 20px;
-    margin: 30px 10px;
     border-radius: 15px;
     overflow-y: auto;
-    max-height: 600px;
 }
 
 .message {
@@ -45,7 +42,6 @@ h1 {
     box-shadow: 0px 0px 30px 10px whitesmoke;
     border-radius: 10px;
     padding: 30px 20px;
-    margin: 10px 20px;
 }
 
 .input-container {
@@ -80,6 +76,10 @@ input {
         margin: 30px 10px;
         max-height: 550px;
     }
+
+    .form {
+        margin: 10px 10%;
+    }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1400px) {
@@ -88,6 +88,10 @@ input {
         margin: 30px 10%;
         max-height: 600px;
     }
+
+    .form {
+        margin: 10px 20%;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -95,5 +99,9 @@ input {
         padding: 30px 5%;
         margin: 30px 20%;
         max-height: 650px;
+    }
+
+    .form {
+        margin: 10px 30%;
     }
 }
