@@ -6,3 +6,28 @@
     
     font-family: "Afacad Flux", system-ui;
 }
+
+.message-board {
+    padding: 30px 20px;
+    margin: 30px 10px;
+    background-color: rgb(206, 206, 206);
+    border-radius: 15px;
+}
+
+.message {
+    padding: 15px 10px;
+    margin: 5px;
+    background-color: rgb(249, 240, 227);
+    border-radius: 10px;
+}
+
+.date-added {
+    margin-bottom: -6px;
+    font-size: small;
+}
+
+
+.message-text {
+    margin: 0 10px;
+    font-size: large;
+}
