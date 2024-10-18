@@ -39,6 +39,8 @@ const messages = [
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname + "/styles")));
+app.use(express.static(path.join(__dirname + "/scripts")));
 
 app.get("/", (req, res) => {
     res.set({ "Content-Type": "text/html" });
