@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
 
 app.get("/messages", (req, res) => {
     res.status(200);
-    res.send(messages);
+    res.json(messages);
 });
 
 app.get("/new", (req, res) => {
@@ -60,7 +60,7 @@ app.get("/new", (req, res) => {
 });
 
 app.post("/new", (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
 
     actualDate = new Date();
 
@@ -85,12 +85,12 @@ app.post("/new", (req, res) => {
 });
 
 app.get("/styles/:file", (req, res) => {
-    console.log(req.path);
+    //console.log(req.path);
     res.sendFile(__dirname + req.path);
 });
 
 app.get("/scripts/:file", (req, res) => {
-    console.log(req.path);
+    //console.log(req.path);
     res.sendFile(__dirname + req.path);
 });
 
