@@ -75,11 +75,11 @@ input {
     .message-board {
         padding: 30px;
         margin: 30px 10px;
-        max-height: 550px;
+        max-height: 425px;
     }
 
     .form {
-        margin: 10px 10%;
+        margin: 5px 10%;
     }
 }
 
@@ -87,7 +87,7 @@ input {
     .message-board {
         padding: 30px 6%;
         margin: 30px 10%;
-        max-height: 600px;
+        max-height: 500px;
     }
 
     .form {
@@ -99,7 +99,7 @@ input {
     .message-board {
         padding: 30px 5%;
         margin: 30px 20%;
-        max-height: 650px;
+        max-height: 550px;
     }
 
     .form {
