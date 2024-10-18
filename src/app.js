@@ -94,4 +94,8 @@ app.get("/scripts/:file", (req, res) => {
     res.sendFile(__dirname + req.path);
 });
 
+app.use((err, req, res, next) => {
+    console.error(err);
+});
+
 app.listen(PORT);
