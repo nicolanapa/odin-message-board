@@ -48,6 +48,11 @@ app.get("/", (req, res) => {
     res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
+app.get("/messages", (req, res) => {
+    res.status(200);
+    res.send(messages);
+});
+
 app.get("/new", (req, res) => {
     res.set({ "Content-Type": "text/html" });
     res.status(200);
