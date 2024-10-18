@@ -84,4 +84,9 @@ app.get("/styles/:file", (req, res) => {
     res.sendFile(__dirname + req.path);
 });
 
+app.get("/scripts/:file", (req, res) => {
+    console.log(req.path);
+    res.sendFile(__dirname + req.path);
+});
+
 app.listen(PORT);
