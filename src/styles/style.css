@@ -33,6 +33,11 @@ h1 {
     font-size: small;
 }
 
+.open-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .message-text {
     margin: 0 10px;
     font-size: large;
