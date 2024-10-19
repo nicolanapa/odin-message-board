@@ -11,9 +11,9 @@ const app = express();
 let actualDate = new Date();
 
 let now =
-    actualDate.getUTCHours() +
+    (actualDate.getUTCHours() < 10 ? "0" + actualDate.getUTCHours() : actualDate.getUTCHours()) +
     ":" +
-    actualDate.getUTCMinutes() +
+    (actualDate.getUTCMinutes() < 10 ? "0" + actualDate.getUTCMinutes() : actualDate.getUTCMinutes()) +
     ":" +
     (actualDate.getUTCSeconds() < 10 ? "0" + actualDate.getUTCSeconds() : actualDate.getUTCSeconds()) +
     ", " +
@@ -65,9 +65,9 @@ app.post("/new", (req, res) => {
     actualDate = new Date();
 
     now =
-        actualDate.getUTCHours() +
+        (actualDate.getUTCHours() < 10 ? "0" + actualDate.getUTCHours() : actualDate.getUTCHours()) +
         ":" +
-        actualDate.getUTCMinutes() +
+        (actualDate.getUTCMinutes() < 10 ? "0" + actualDate.getUTCMinutes() : actualDate.getUTCMinutes()) +
         ":" +
         (actualDate.getUTCSeconds() < 10 ? "0" + actualDate.getUTCSeconds() : actualDate.getUTCSeconds()) +
         ", " +
