@@ -41,6 +41,12 @@ app.get("/messages", (req, res) => {
     res.json(messages);
 });
 
+app.get("/messages/:id", (req, res) => {
+    res.set({ "Content-Type": "text/html" });
+    res.status(200);
+    res.render("viewMessage", { title: "Mini Messageboard", message: messages[req.params.id], id: req.params.id });
+});
+
 app.get("/new", (req, res) => {
     res.set({ "Content-Type": "text/html" });
     res.status(200);
