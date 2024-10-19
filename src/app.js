@@ -2,26 +2,14 @@ import express from "express";
 import process from "process";
 import url from "url";
 import path from "path";
+import returnDate from "./scripts/returnDate.js";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT;
 const app = express();
 
-let actualDate = new Date();
-
-let now =
-    (actualDate.getUTCHours() < 10 ? "0" + actualDate.getUTCHours() : actualDate.getUTCHours()) +
-    ":" +
-    (actualDate.getUTCMinutes() < 10 ? "0" + actualDate.getUTCMinutes() : actualDate.getUTCMinutes()) +
-    ":" +
-    (actualDate.getUTCSeconds() < 10 ? "0" + actualDate.getUTCSeconds() : actualDate.getUTCSeconds()) +
-    ", " +
-    actualDate.getUTCDate() +
-    "/" +
-    (actualDate.getUTCMonth() + 1) +
-    "/" +
-    actualDate.getUTCFullYear();
+let now = returnDate();
 
 const messages = [
     {
@@ -62,20 +50,7 @@ app.get("/new", (req, res) => {
 app.post("/new", (req, res) => {
     //console.log(req.body);
 
-    actualDate = new Date();
-
-    now =
-        (actualDate.getUTCHours() < 10 ? "0" + actualDate.getUTCHours() : actualDate.getUTCHours()) +
-        ":" +
-        (actualDate.getUTCMinutes() < 10 ? "0" + actualDate.getUTCMinutes() : actualDate.getUTCMinutes()) +
-        ":" +
-        (actualDate.getUTCSeconds() < 10 ? "0" + actualDate.getUTCSeconds() : actualDate.getUTCSeconds()) +
-        ", " +
-        actualDate.getUTCDate() +
-        "/" +
-        (actualDate.getUTCMonth() + 1) +
-        "/" +
-        actualDate.getUTCFullYear();
+    now = returnDate();
 
     // Check content
 
