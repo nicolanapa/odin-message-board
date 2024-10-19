@@ -48,7 +48,7 @@ app.get("/new", (req, res) => {
 });
 
 app.post("/new", (req, res) => {
-    //console.log(req.body);
+    //console.log("NEW REQUEST", req.body);
 
     now = returnDate();
 
