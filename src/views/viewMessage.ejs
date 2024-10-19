@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %> Preview of <%= i %></title>
+
+        <link rel="stylesheet" href="../styles/style.css" />
+    </head>
+    <body>
+        <main>
+            <h1><%= title %> Previewing</h1>
+
+            <div class="message-board">
+                <div class="message">
+                    <h4 class="date-added"><%= message.added %></h4>
+                    <h2 class="user"><%= message.user %></h2>
+                    <p class="message-text"><%= message.text %></p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
