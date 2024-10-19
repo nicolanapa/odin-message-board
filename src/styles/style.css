@@ -10,7 +10,9 @@
 h1 {
     font-size: x-large;
     text-align: center;
-    padding-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: -5px;
+    padding-top: 20px;
 }
 
 .message-board {
