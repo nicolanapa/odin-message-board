@@ -30,16 +30,27 @@ setInterval(async () => {
             date.classList.add("date-added");
             date.textContent = updatedMessages[i].added;
 
+            let container = document.createElement("div");
+            container.classList.add("open-container");
+
             let user = document.createElement("h2");
             user.classList.add("user");
             user.textContent = updatedMessages[i].user;
+
+            let openMessage = document.createElement("h3");
+            let link = document.createElement("a");
+            link.href = "/messages/" + i;
+            link.textContent = "Open Message";
+            openMessage.appendChild(link);
 
             let messageContent = document.createElement("p");
             messageContent.classList.add("message-text");
             messageContent.textContent = updatedMessages[i].text;
 
-            newMessage.appendChild(date);
-            newMessage.appendChild(user);
+            container.appendChild(user);
+            container.appendChild(openMessage);
+
+            newMessage.appendChild(container);
             newMessage.appendChild(messageContent);
 
             document.querySelector(".message-board").appendChild(newMessage);
