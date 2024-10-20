@@ -58,7 +58,7 @@ app.get("/messages/:id", (req, res) => {
 app.get("/new", (req, res) => {
     res.set({ "Content-Type": "text/html" });
     res.status(200);
-    res.render("form");
+    res.render("formSingleView");
 });
 
 app.post("/new", (req, res) => {
