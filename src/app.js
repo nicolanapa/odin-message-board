@@ -45,7 +45,7 @@ app.get("/messages", (req, res) => {
 app.get("/messages/:id", (req, res) => {
     res.set({ "Content-Type": "text/html" });
 
-    if (messages.length < req.params.id || req.params.id < 0) {
+    if (messages.length < req.params.id || req.params.id < 0 || !Number.isInteger(req.params.id)) {
         res.status(404);
         res.send("<h1>Message of ID " + req.params.id + " doesn't exist!</h1>");
         throw new Error("Message of ID " + req.params.id + " doesn't exist!");
