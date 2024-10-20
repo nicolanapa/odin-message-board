@@ -28,6 +28,10 @@ h1 {
     border-radius: 10px;
 }
 
+.open-space {
+    padding: 50px 5%;
+}
+
 .date-added {
     margin-bottom: -6px;
     font-size: small;
