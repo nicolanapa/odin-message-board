@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Send a Message!</title>
+
+        <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+        <form method="POST" action="/new" class="form">
+            <div class="input-container">
+                <label for="user-name">User: </label>
+                <input type="text" name="userName" id="user-name" required maxlength="32" />
+            </div>
+
+            <div class="input-container">
+                <label for="message-content">Message to be sent: </label>
+                <input type="text" name="messageContent" id="message-content" required maxlength="1000" />
+            </div>
+
+            <button class="send-message">Send Message!</button>
+        </form>
+    </body>
+</html>
