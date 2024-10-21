@@ -13,7 +13,7 @@
             <h1><%= title %></h1>
 
             <div class="message-board">
-                
+                <%- include("userIcons", { messages: messages }) %>
                 
                 <%for (let i = 0; i < messages.length; i++) {%>
                     <div class="message">
