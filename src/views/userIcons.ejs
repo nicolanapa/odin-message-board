@@ -1,0 +1,21 @@
+<div>
+    <h2>Users</h2>
+
+    <ul>
+        <% let allUsers = []; %>
+
+        <% for (let i = 0; i < messages.length; i++) { %>
+            <% if (!allUsers.includes(messages[i].user)) { %>
+                <% allUsers.push(messages[i].user); %>
+
+                <% if (messages[i].user.length > 1) { %>
+                    <li><%= String(messages[i].user).substring(0, 1) %><%= String(String(messages[i].user).slice(-1)).toUpperCase(); %></li>
+                <% } else if (messages[i].user.length === 1) { %>
+                    <li><%= String(messages[i].user).substring(0, 1) %></li>
+                <% } %>
+            <% } %>
+        <% } %>
+
+        <%= allUsers %>
+    </ul>
+</div>
