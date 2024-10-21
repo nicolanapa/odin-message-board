@@ -4,7 +4,7 @@
     <ul class="icon-list">
         <% let allUsers = []; %>
         <% let allUsersMinified = []; %>
-
+        <% let randomColors = ["red", "green", "white", "yellow", "cyan", "deepskyblue", "violet", "pink", "gray", "goldenrod", "darkgray"]; %>
 
         <% for (let i = 0; i < messages.length; i++) { %>
             <% if (!allUsers.includes(messages[i].user)) { %>
@@ -15,9 +15,7 @@
                 <% if (!allUsersMinified.includes(minified)) { %>
                     <% allUsersMinified.push(minified); %>
                     
-                    <li class="icon"><%= minified %></li>
-                <% } else { %>
-
+                    <li class="icon <%= randomColors[Math.floor(Math.random() * randomColors.length)] %>"><%= minified %></li>
                 <% } %>
             <% } %>
         <% } %>
