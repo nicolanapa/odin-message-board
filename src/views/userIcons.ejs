@@ -1,7 +1,7 @@
 <div>
     <h2>Users</h2>
 
-    <ul>
+    <ul class="icon-list">
         <% let allUsers = []; %>
 
         <% for (let i = 0; i < messages.length; i++) { %>
@@ -9,13 +9,13 @@
                 <% allUsers.push(messages[i].user); %>
 
                 <% if (messages[i].user.length > 1) { %>
-                    <li><%= String(messages[i].user).substring(0, 1) %><%= String(String(messages[i].user).slice(-1)).toUpperCase(); %></li>
+                    <li class="icon"><%= String(messages[i].user).substring(0, 1) %><%= String(String(messages[i].user).slice(-1)).toUpperCase(); %></li>
                 <% } else if (messages[i].user.length === 1) { %>
-                    <li><%= String(messages[i].user).substring(0, 1) %></li>
+                    <li class="icon"><%= String(messages[i].user).substring(0, 1) %></li>
                 <% } %>
             <% } %>
         <% } %>
-
-        <%= allUsers %>
     </ul>
+    
+    <%= allUsers %>
 </div>
