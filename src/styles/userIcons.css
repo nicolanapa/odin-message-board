@@ -18,3 +18,47 @@
     justify-content: center;
     align-items: center;
 }
+
+.red {
+    background-color: rgb(255, 100, 100);
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+.white {
+    background-color: white;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.deepskyblue {
+    background-color: deepskyblue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.gray {
+    background-color: lightgray;
+}
+
+.goldenrod {
+    background-color: goldenrod;
+}
+
+.darkgray {
+    background-color: rgb(162, 162, 162);
+}
