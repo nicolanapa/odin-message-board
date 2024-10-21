@@ -66,11 +66,14 @@ app.post("/new", (req, res) => {
 
     now = returnDate();
 
-    // Check content
-
-    messages.push({ text: req.body.messageContent, user: req.body.userName, added: now });
-
-    res.redirect("/");
+    if (req.body.userName.length > 0 && req.body.messageContent.length > 0) {
+        messages.push({ text: req.body.messageContent, user: req.body.userName, added: now });
+        res.redirect("/");
+    } else {
+        res.status(400);
+        res.send("<h1>User or Message length must be greater than 0</h1>");
+        throw new Error("User or Message length must be greater than 0");
+    }
 });
 
 app.get("/styles/:file", (req, res) => {
