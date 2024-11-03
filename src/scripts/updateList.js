@@ -35,7 +35,7 @@ setInterval(async () => {
 
             let user = document.createElement("h2");
             user.classList.add("user");
-            user.textContent = updatedMessages[i].user;
+            user.textContent = updatedMessages[i].username;
 
             let openMessage = document.createElement("h3");
             let link = document.createElement("a");
@@ -60,4 +60,4 @@ setInterval(async () => {
     } else if (updatedResponse.status === 200 && messages.length > updatedMessages.length) {
         location.reload();
     }
-}, 4000);
+}, 6000);
