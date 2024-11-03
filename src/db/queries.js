@@ -27,4 +27,22 @@ async function postMessage({ text, user }) {
     );
 }
 
+setInterval(async () => {
+    await pool.query("DROP TABLE messages;");
+    console.log("Deleted everything from messages TABLE");
+
+    await pool.query(`
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+            text VARCHAR (250),
+            username VARCHAR (32),
+            added CHAR (20)
+        );
+        
+        INSERT INTO messages (text, username, added) 
+        VALUES ('Hi there!', 'Amando', '${returnDate()}'),
+            ('Hello World!', 'Charles', '${returnDate()}');
+        `);
+}, 864000000);
+
 export { getAllMessages, getMessage, getCountMessages, postMessage };
