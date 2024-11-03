@@ -2,14 +2,16 @@ import express from "express";
 import process from "process";
 import url from "url";
 import path from "path";
-import returnDate from "./scripts/returnDate.js";
+//import returnDate from "./scripts/returnDate.js";
+import { messagesRouter } from "./routes/messages.js";
+import { newRouter } from "./routes/new.js";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-let now = returnDate();
+/*let now = returnDate();
 
 const messages = [
     {
@@ -22,7 +24,7 @@ const messages = [
         user: "Charles",
         added: now,
     },
-];
+];*/
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -37,44 +39,9 @@ app.get("/", (req, res) => {
     res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
-app.get("/messages", (req, res) => {
-    res.status(200);
-    res.json(messages);
-});
+app.use("/messages", messagesRouter);
 
-app.get("/messages/:id", (req, res) => {
-    res.set({ "Content-Type": "text/html" });
-
-    if (messages.length < req.params.id || req.params.id < 0 || !Number.isInteger(Number(req.params.id))) {
-        res.status(404);
-        res.send("<h1>Message of ID " + req.params.id + " doesn't exist!</h1>");
-        throw new Error("Message of ID " + req.params.id + " doesn't exist!");
-    }
-
-    res.status(200);
-    res.render("viewMessage", { title: "Mini Messageboard", message: messages[req.params.id], id: req.params.id });
-});
-
-app.get("/new", (req, res) => {
-    res.set({ "Content-Type": "text/html" });
-    res.status(200);
-    res.render("formSingleView");
-});
-
-app.post("/new", (req, res) => {
-    //console.log("NEW REQUEST", req.body);
-
-    now = returnDate();
-
-    if (req.body.userName.length > 0 && req.body.messageContent.length > 0) {
-        messages.push({ text: req.body.messageContent, user: req.body.userName, added: now });
-        res.redirect("/");
-    } else {
-        res.status(400);
-        res.send("<h1>User or Message length must be greater than 0</h1>");
-        throw new Error("User or Message length must be greater than 0");
-    }
-});
+app.use("/new", newRouter);
 
 app.get("/styles/:file", (req, res) => {
     //console.log(req.path);
