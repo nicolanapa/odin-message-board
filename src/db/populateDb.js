@@ -17,7 +17,7 @@ VALUES ("Hi there!", "Amando", "${returnDate()}"),
     ("Hello World!", "Charles", "${returnDate()}");
 `;
 
-async () => {
+async function main() {
     const client = new Client({ connectionString: process.env.DB_CONNECTION_STRING });
 
     await client.connect();
@@ -25,4 +25,6 @@ async () => {
     await client.end();
 
     console.log("Created messages TABLE with DEFAULT VALUES");
-};
+}
+
+main();
