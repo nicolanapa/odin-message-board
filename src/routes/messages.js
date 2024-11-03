@@ -13,7 +13,12 @@ messagesRouter.get("/:id", async (req, res) => {
 
     res.set({ "Content-Type": "text/html" });
 
-    if (db.getCountMessages() < req.params.id || req.params.id < 0 || !Number.isInteger(Number(req.params.id))) {
+    if (
+        db.getCountMessages() < req.params.id ||
+        req.params.id < 0 ||
+        !Number.isInteger(Number(req.params.id)) ||
+        message === undefined
+    ) {
         res.status(404);
         res.send("<h1>Message of ID " + req.params.id + " doesn't exist!</h1>");
         throw new Error("Message of ID " + req.params.id + " doesn't exist!");
