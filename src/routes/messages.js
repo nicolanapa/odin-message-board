@@ -2,12 +2,12 @@ import { Router } from "express";
 
 const messagesRouter = Router();
 
-messagesRouter.get("/messages", (req, res) => {
+messagesRouter.get("/", (req, res) => {
     res.status(200);
     res.json(messages);
 });
 
-messagesRouter.get("/messages/:id", (req, res) => {
+messagesRouter.get("/:id", (req, res) => {
     res.set({ "Content-Type": "text/html" });
 
     if (messages.length < req.params.id || req.params.id < 0 || !Number.isInteger(Number(req.params.id))) {

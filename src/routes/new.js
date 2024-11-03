@@ -3,13 +3,13 @@ import returnDate from "../scripts/returnDate.js";
 
 const newRouter = Router();
 
-newRouter.get("/new", (req, res) => {
+newRouter.get("/", (req, res) => {
     res.set({ "Content-Type": "text/html" });
     res.status(200);
     res.render("formSingleView");
 });
 
-newRouter.post("/new", (req, res) => {
+newRouter.post("/", (req, res) => {
     //console.log("NEW REQUEST", req.body);
 
     const now = returnDate();
