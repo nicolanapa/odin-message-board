@@ -21,7 +21,7 @@
                         <h4 class="date-added"><%= messages[i].added %></h4>
                         <div class="open-container">
                             <h2 class="user"><%= messages[i].username %></h2>
-                            <h3><a href="/messages/<%= i + 1 %>">Open Message</a></h3>
+                            <h3><a href="/messages/<%= messages[i].id %>">Open Message</a></h3>
                         </div>
                         <p class="message-text"><%= messages[i].text %></p>
                     </div>

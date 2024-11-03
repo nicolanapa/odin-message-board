@@ -39,7 +39,7 @@ setInterval(async () => {
 
             let openMessage = document.createElement("h3");
             let link = document.createElement("a");
-            link.href = "/messages/" + i;
+            link.href = "/messages/" + updatedMessages[i].id;
             link.textContent = "Open Message";
             openMessage.appendChild(link);
 
