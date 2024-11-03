@@ -23,7 +23,7 @@ async function postMessage({ text, user }) {
         INSERT INTO messages (text, userName, added)
         VALUES ($1, $2, $3)
         `,
-        [text, user, `'${returnDate()}'`],
+        [text, user, returnDate()],
     );
 }
 
