@@ -8,11 +8,11 @@ const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     text VARCHAR (250),
-    userName VARCHAR (32),
+    username VARCHAR (32),
     added CHAR (20)
 );
 
-INSERT INTO messages (text, userName, added) 
+INSERT INTO messages (text, username, added) 
 VALUES ('Hi there!', 'Amando', '${returnDate()}'),
     ('Hello World!', 'Charles', '${returnDate()}');
 `;
