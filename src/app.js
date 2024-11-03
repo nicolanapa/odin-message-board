@@ -5,6 +5,7 @@ import path from "path";
 //import returnDate from "./scripts/returnDate.js";
 import { messagesRouter } from "./routes/messages.js";
 import { newRouter } from "./routes/new.js";
+import { indexRouter } from "./routes/index.js";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -33,11 +34,7 @@ app.use(express.static(path.join(__dirname + "/styles")));
 app.use(express.static(path.join(__dirname + "/scripts")));
 app.use("/favicon.ico", express.static(path.join(__dirname + "/favicon.svg")));
 
-app.get("/", (req, res) => {
-    res.set({ "Content-Type": "text/html" });
-    res.status(200);
-    res.render("index", { title: "Mini Messageboard", messages: messages });
-});
+app.use("/", indexRouter);
 
 app.use("/messages", messagesRouter);
 
