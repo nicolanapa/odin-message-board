@@ -1,3 +1,4 @@
+import returnDate from "../scripts/returnDate.js";
 import pool from "./pool.js";
 
 async function getAllMessages() {
@@ -16,4 +17,14 @@ async function getCountMessages() {
     return await pool.query("SELECT COUNT(id) FROM messages");
 }
 
-export { getAllMessages, getMessage, getCountMessages };
+async function postMessage({ text, user }) {
+    await pool.query(
+        `
+        INSERT INTO messages (text, userName, added)
+        VALUES ($1, $2, $3)
+        `,
+        [text, user, `'${returnDate()}'`],
+    );
+}
+
+export { getAllMessages, getMessage, getCountMessages, postMessage };
