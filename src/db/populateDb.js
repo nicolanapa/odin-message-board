@@ -1,6 +1,6 @@
 import process from "process";
 import pg from "pg";
-import returnDate from "../scripts/returnDate";
+import returnDate from "../scripts/returnDate.js";
 
 const client = pg.Client;
 
@@ -9,10 +9,10 @@ CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     text VARCHAR (250),
     user VARCHAR (32),
-    added CHAR (19)
+    added CHAR (20)
 );
 
 INSERT INTO messages (text, user, added) 
-VALUES ("Hi there!", "Amando", ${returnDate()}),
-    ("Hello World!", "Charles", ${returnDate()});
+VALUES ("Hi there!", "Amando", "${returnDate()}"),
+    ("Hello World!", "Charles", "${returnDate()}");
 `;
