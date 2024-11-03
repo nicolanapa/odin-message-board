@@ -8,9 +8,9 @@ function returnDate() {
         ":" +
         (actualDate.getUTCSeconds() < 10 ? "0" + actualDate.getUTCSeconds() : actualDate.getUTCSeconds()) +
         ", " +
-        actualDate.getUTCDate() +
+        (actualDate.getUTCDate() < 10 ? "0" + actualDate.getUTCDate() : actualDate.getUTCDate()) +
         "/" +
-        (actualDate.getUTCMonth() + 1) +
+        (actualDate.getUTCMonth() + 1 < 10 ? "0" + (actualDate.getUTCMonth() + 1) : actualDate.getUTCMonth() + 1) +
         "/" +
         actualDate.getUTCFullYear()
     );
