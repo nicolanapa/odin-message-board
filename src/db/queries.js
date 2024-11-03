@@ -10,7 +10,7 @@ async function getAllMessages() {
 async function getMessage(id) {
     const { rows } = await pool.query("SELECT * FROM messages WHERE id = $1", [id]);
 
-    return rows;
+    return rows[0];
 }
 
 async function getCountMessages() {
@@ -20,7 +20,7 @@ async function getCountMessages() {
 async function postMessage({ text, user }) {
     await pool.query(
         `
-        INSERT INTO messages (text, userName, added)
+        INSERT INTO messages (text, username, added)
         VALUES ($1, $2, $3)
         `,
         [text, user, returnDate()],

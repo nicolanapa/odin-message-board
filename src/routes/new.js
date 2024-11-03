@@ -15,8 +15,8 @@ newRouter.post("/", (req, res) => {
 
     const now = returnDate();
 
-    if (req.body.userName.length > 0 && req.body.messageContent.length > 0) {
-        db.postMessage({ text: req.body.messageContent, user: req.body.userName, added: now });
+    if (req.body.username.length > 0 && req.body.messageContent.length > 0) {
+        db.postMessage({ text: req.body.messageContent, user: req.body.username, added: now });
         res.redirect("/");
     } else {
         res.status(400);
